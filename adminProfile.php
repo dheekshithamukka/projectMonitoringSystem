@@ -15,20 +15,18 @@ session_start();
 <html>
 
 <head>
-  <link rel="stylesheet" href="adminProfile.css">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="adminProfile1.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
   <script src='jquery-3.2.1.min.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
 
 </head>
-<!-- <body style="background: linear-gradient(120deg, #FFAFBD, #ffc3a0)"> -->
-<!-- <body style="background: linear-gradient(120deg, #1c92d2, #f2fcfe);"> -->
 
-<body style="background: linear-gradient(120deg, #E8CBC0, #636FA4);">
+<body;">
 
 
 
@@ -38,113 +36,162 @@ session_start();
   </center>
 
 
+  <div class="container">
+    <div class="row mb-5">
+      <div class="column col-4">
+        <h2>PRC Allotment</h2>
+        <br />
+        <!-- <br><br> -->
+        <form method="POST" action="">
+          <label for="branch">Choose a branch:</label>
+          <select name="branch" id="branch">
+            <option value="">Select</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="ETM">ETM</option>
+            <option value="IT">IT</option>
+          </select>
+          <br><br>
+          <label for="year">Choose a year:</label>
+          <select name="year" id="year">
+            <option value="">Select</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <br><br>
+          <label for="section">Choose a section:</label>
+          <select name="section" id="section">
+            <option value="">Select</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
+          <br><br>
+         
+          <p>
+            <label><strong>No of PRC</strong></label>
+            <label><input name="cand_no" type="text" placeholder="Type number of PRC" /></label>
+            <div class="clear"></div>
+          </p>
+          <div class="cand_fields">
+            <table id="studentTable" width="630" border="0">
+              <tr>
+                <td>PRC Id</td>
+              </tr>
+              <tr>
+              </tr>
+            </table>
+          </div>
+          <input type="submit" name="prcAllotment" value="Submit" />
 
-  <div class="row">
-    <div class="column">
-      <br><br>
-      <form method="POST" action="">
-        <label for="branch">Choose a branch:</label>
-        <select name="branch" id="branch">
-          <option value="">Select</option>
-          <option value="CSE">CSE</option>
-          <option value="ECE">ECE</option>
-          <option value="EEE">EEE</option>
-          <option value="ETM">ETM</option>
-          <option value="IT">IT</option>
-        </select>
-        <br><br>
-        <label for="year">Choose a year:</label>
-        <select name="year" id="year">
-          <option value="">Select</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-        <br><br>
-        <label for="section">Choose a section:</label>
-        <select name="section" id="section">
-          <option value="">Select</option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-        </select>
-        <br><br>
-        <!-- <label>Enter PRC Id: </label>
-                <input placeholder="PRC Id" type="text" id="prcId" name="prcId">
-                <br /> -->
-
-        <p>
-          <label><strong>No of PRC</strong></label>
-          <label><input name="cand_no" type="text" placeholder="Type number of PRC" /></label>
-          <div class="clear"></div>
-        </p>
-        <div class="cand_fields">
-          <table id="studentTable" width="630" border="0">
+        </form>
+        <div class="template" style="display: none">
+          <table>
             <tr>
-              <td>PRC Id</td>
-            </tr>
-            <tr>
+              <td><input name="prcId[]" type="text" placeholder="PRC Id" required="required" /></td>
             </tr>
           </table>
         </div>
-        <input type="submit" name="prcAllotment" value="Submit" />
-
-      </form>
-      <div class="template" style="display: none">
-        <table>
-          <tr>
-            <td><input name="prcId[]" type="text" placeholder="PRC Id" required="required" /></td>
-          </tr>
-        </table>
+       
       </div>
-      <!-- <input type="submit" name="prcAllotment" value="Submit" /> -->
+
+
+
+
+      <div class="column col-4">
+        <h2>PRC Meeting Marks</h2>
+        <br />
+        <form action="" method="POST">
+          <label for="branch">Choose a branch:</label>
+          <select name="branch" id="branch">
+            <option value="">Select</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="ETM">ETM</option>
+            <option value="IT">IT</option>
+          </select>
+          <br><br>
+          <label for="year">Choose a year:</label>
+          <select name="year" id="year">
+            <option value="">Select</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <br><br>
+          <label for="section">Choose a section:</label>
+          <select name="section" id="section">
+            <option value="">Select</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
+          <br><br>
+          <label for="prc">Choose:</label>
+          <select name="prc" id="prc">
+            <option value="">Select</option>
+            <option value="prc1">PRC 1</option>
+            <option value="prc2">PRC 2</option>
+            <option value="prc3">PRC 3</option>
+          </select>
+          <br><br>
+          <label>Marks: </label>
+          <input type="number" id="marks" name="marks">
+          <br />
+          <input type="submit" name="submit_prc_marks">
+        </form>
+      </div>
+
+
+
+      <div class="column col-4">
+        <h2>PRC Meetings</h2>
+        <br />
+        <!-- <br><br> -->
+        <form action="" method="POST">
+          <label for="branch">Choose a branch:</label>
+          <select name="branch" id="branch1">
+            <option value="">Select</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="ETM">ETM</option>
+            <option value="IT">IT</option>
+          </select>
+          <br><br>
+          <label for="year">Choose a year:</label>
+          <select name="year" id="year1">
+            <option value="">Select</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <br><br>
+          <label for="section">Choose a section:</label>
+          <select name="section" id="section1">
+            <option value="">Select</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
+          <br><br>
+          <label for="prc">Choose:</label>
+          <select name="prc" id="prc1">
+            <option value="">Select</option>
+            <option value="prc1">PRC 1</option>
+            <option value="prc2">PRC 2</option>
+            <option value="prc3">PRC 3</option>
+          </select>
+          <br><br>
+          <label>Select date </label>
+          <input type="date" id="date1" name="date">
+          <br />
+          <input type="submit" name="submit_prc">
+        </form>
+      </div>
+
 
     </div>
-
-
-
-
-  <div class="column">
-    <br><br>
-    <form action="" method="POST">
-      <label for="branch">Choose a branch:</label>
-      <select name="branch" id="branch">
-        <option value="">Select</option>
-        <option value="CSE">CSE</option>
-        <option value="ECE">ECE</option>
-        <option value="EEE">EEE</option>
-        <option value="ETM">ETM</option>
-        <option value="IT">IT</option>
-      </select>
-      <br><br>
-      <label for="year">Choose a year:</label>
-      <select name="year" id="year">
-        <option value="">Select</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-      <br><br>
-      <label for="section">Choose a section:</label>
-      <select name="section" id="section">
-        <option value="">Select</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-      </select>
-      <br><br>
-      <label for="prc">Choose:</label>
-      <select name="prc" id="prc">
-        <option value="">Select</option>
-        <option value="prc1">PRC 1</option>
-        <option value="prc2">PRC 2</option>
-        <option value="prc3">PRC 3</option>
-      </select>
-      <br><br>
-      <label>Marks: </label>
-      <input type="number" id="marks" name="marks">
-      <br />
-      <input type="submit" name="submit_prc_marks">
-    </form>
-  </div>
 
   </div>
 
@@ -244,7 +291,7 @@ if (isset($_POST['prcAllotment'])) {
   $num1 = mysqli_num_rows($result1);
   if ($num1 == 0) {
     for ($i = 0; $i <= count($prcId); $i++) {
-      $check = "SELECT * FROM prcreg WHERE prcRollNo='$prcId[$i]'";
+      $check = "SELECT * FROM prcreg WHERE prcRollNo='$prcId[$i]' AND prcBranch='$branch'";
       $res = mysqli_query($con, $check);
       $n = mysqli_num_rows($res);
       echo $n;
@@ -299,44 +346,6 @@ if (isset($_POST['prcAllotment'])) {
 
 
 
-<!-- <div class="row">
-    <div class="column">
-      <form action="" method="post">
-        <h1>3rd year</h1>
-        <label for="csea3">CSE-A: </label>
-        <input placeholder="PRC Id" type="text" id="csea3" name="csea3">
-        <input type="submit" name="csea3_submit">
-        <br />
-        <br />
-        <label for="cseb3">CSE-B:</label>
-        <input type="text" id="cseb3" name="cseb3">
-        <input type="submit" name="cseb3_submit">
-        <br />
-        <br />
-        <label for="csec3">CSE-C: </label>
-        <input type="text" id="csec3" name="csec3">
-        <input type="submit" name="csec3_submit">
-      </form>
-    </div>
-    <div class="column">
-      <form action="" method="post">
-        <h1>4th year</h1>
-        <label for="csea4">CSE-A: </label>
-        <input type="text" id="csea4" name="csea4">
-        <input type="submit" name="csea4_submit">
-        <br />
-        <br />
-        <label for="cseb4">CSE-B:</label>
-        <input type="text" id="cseb4" name="cseb4">
-        <input type="submit" name="cseb4_submit">
-        <br />
-        <br />
-        <label for="csec4">CSE-C: </label>
-        <input type="text" id="csec4" name="csec4">
-        <input type="submit" name="csec4_submit">
-      </form>
-    </div>
-  </div> -->
 
 
 
@@ -706,117 +715,126 @@ window.location.href = 'adminProfile.php';
 
 
 
-<!-- <body style="background: linear-gradient(120deg, #D3CCE3, #E9E4F0)"> -->
+
+
+
+
+
+
+<div class="container">
+
+  <div class="row mt-5">
+    <div class="column col-6">
+      <h2>Documents submission deadlines</h2>
+      <br />
+      <!-- <br><br> -->
+      <form action="" method="POST">
+        <label for="branch">Choose a branch:</label>
+        <select name="branch" id="branch">
+          <option value="">Select</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+          <option value="ETM">ETM</option>
+          <option value="IT">IT</option>
+        </select>
+        <br><br>
+        <label for="year">Choose a year:</label>
+        <select name="year" id="year">
+          <option value="">Select</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <br><br>
+        <label for="section">Choose a section:</label>
+        <select name="section" id="section">
+          <option value="">Select</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+        <br><br>
+        <label for="section">Choose:</label>
+        <select name="adv" id="adv">
+          <option value="">Select</option>
+          <option value="abstract">Abstract</option>
+          <option value="documents">Documents</option>
+          <option value="videos">Videos</option>
+        </select>
+        <br><br>
+        <label>Select date </label>
+        <input type="date" id="date" name="date">
+        <br />
+        <input type="submit" name="submit_deadlines">
+      </form>
+    </div>
+
+
+
+    
+
+  </div>
+</div>
+
+
+<br />
+<br />
 <center>
-  <h1 style="margin-top: 50px;">Deadlines</h1>
+  <a href="adminlogin.php">
+    <input type="submit" name="approve" value="Logout" class="btn btn-success mt-5" id="button2" style="background-color: #4CAF50;
+  background-color:#636FCC;
+  border: none;
+  color: white;
+  margin-top: 100px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;" />
+
+  </a>
+
 </center>
 
 
 
-
-
-
-
-
-
-<div class="row">
-  <div class="column">
-    <br><br>
-    <form action="" method="POST">
-      <label for="branch">Choose a branch:</label>
-      <select name="branch" id="branch">
-        <option value="">Select</option>
-        <option value="CSE">CSE</option>
-        <option value="ECE">ECE</option>
-        <option value="EEE">EEE</option>
-        <option value="ETM">ETM</option>
-        <option value="IT">IT</option>
-      </select>
-      <br><br>
-      <label for="year">Choose a year:</label>
-      <select name="year" id="year">
-        <option value="">Select</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-      <br><br>
-      <label for="section">Choose a section:</label>
-      <select name="section" id="section">
-        <option value="">Select</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-      </select>
-      <br><br>
-      <label for="section">Choose:</label>
-      <select name="adv" id="adv">
-        <option value="">Select</option>
-        <option value="abstract">Abstract</option>
-        <option value="documents">Documents</option>
-        <option value="videos">Videos</option>
-      </select>
-      <br><br>
-      <label>Select date </label>
-      <input type="date" id="date" name="date">
-      <br />
-      <input type="submit" name="submit_deadlines">
-    </form>
-  </div>
-
-
-
-
-
-
-  <div class="column">
-    <br><br>
-    <form action="" method="POST">
-      <label for="branch">Choose a branch:</label>
-      <select name="branch" id="branch1">
-        <option value="">Select</option>
-        <option value="CSE">CSE</option>
-        <option value="ECE">ECE</option>
-        <option value="EEE">EEE</option>
-        <option value="ETM">ETM</option>
-        <option value="IT">IT</option>
-      </select>
-      <br><br>
-      <label for="year">Choose a year:</label>
-      <select name="year" id="year1">
-        <option value="">Select</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-      <br><br>
-      <label for="section">Choose a section:</label>
-      <select name="section" id="section1">
-        <option value="">Select</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-      </select>
-      <br><br>
-      <label for="prc">Choose:</label>
-      <select name="prc" id="prc1">
-        <option value="">Select</option>
-        <option value="prc1">PRC 1</option>
-        <option value="prc2">PRC 2</option>
-        <option value="prc3">PRC 3</option>
-      </select>
-      <br><br>
-      <label>Select date </label>
-      <input type="date" id="date1" name="date">
-      <br />
-      <input type="submit" name="submit_prc">
-    </form>
-  </div>
-
-</div>
-
-
-
-
-
+<?php
+if (isset($_POST['submit_ac_year'])) {
+  $start_date = $_POST['start_date'];
+  $end_date = $_POST['end_date'];
+  $qu1 = "SELECT * FROM academic_calendar";
+  $res1 = mysqli_query($con, $qu1);
+  $no = mysqli_num_rows($res1);
+  if ($no == 0) {
+    $qu = "INSERT INTO academic_calendar(start_date, end_date) VALUES('$start_date', '$end_date')";
+    if (mysqli_query($con, $qu)) {
+      echo ("<script LANGUAGE='JavaScript'>
+       window.alert('Updated meeting deadline. ');
+      window.location.href = 'adminProfile.php';
+      </script>");
+    } else {
+      echo ("<script LANGUAGE='JavaScript'>
+       window.alert('Error. ');
+      window.location.href = 'adminProfile.php';
+      </script>");
+    }
+  } else {
+    $qu = "UPDATE academic_calendar SET start_date='$start_date', end_date='$end_date'";
+    if (mysqli_query($con, $qu)) {
+      echo ("<script LANGUAGE='JavaScript'>
+       window.alert('Updated meeting deadline. ');
+      window.location.href = 'adminProfile.php';
+      </script>");
+    } else {
+      echo ("<script LANGUAGE='JavaScript'>
+       window.alert('Error. ');
+      window.location.href = 'adminProfile.php';
+      </script>");
+    }
+  }
+}
+?>
 
 
 
@@ -846,7 +864,6 @@ if (isset($_POST['submit_prc'])) {
       echo "Error";
     }
   } else {
-    echo "Hello";
     $s1 = "UPDATE prc_meetings SET date='$dat' WHERE branch='$branch' AND year='$year' AND section='$section' AND prc='$prc' ";
     if (mysqli_query($con, $s1)) {
       echo ("<script LANGUAGE='JavaScript'>
@@ -910,56 +927,6 @@ if (isset($_POST['submit_deadlines'])) {
 
 
 
-
-<br /><br />
-<!-- <div class="row">
-    <div class="column">
-
-      <form action="" method="post">
-        <label for="abstract">Abstract: </label>
-        <input type="date" id="abstract" name="abstract">
-        <input type="submit" name="abstract_submit">
-        <br />
-        <br />
-        <label for="documents">Documents:</label>
-        <input type="date" id="documents" name="documents">
-        <input type="submit" name="documents_submit">
-        <br />
-        <br />
-        <label for="videos">Videos: </label>
-        <input type="date" id="videos" name="videos">
-        <input type="submit" name="videos_submit">
-      </form>
-
-      <br />
-      <br />
-      <br />
-
-    </div>
-
-
-    <div class="column">
-
-
-      <form action="" method="post">
-        <label for="PRC1">PRC1:</label>
-        <input type="date" id="prc1" name="prc1">
-        <input type="submit" name="prc1_submit" class="button">
-        <br />
-        <br />
-        <label for="PRC2">PRC2:</label>
-        <input type="date" id="prc2" name="prc2">
-        <input type="submit" name="prc2_submit" class="button">
-        <br />
-        <br />
-        <label for="PRC3">PRC3:</label>
-        <input type="date" id="prc3" name="prc3">
-        <input type="submit" name="prc3_submit" class="button">
-      </form>
-
-
-    </div>
-  </div> -->
 
 
 <?php
@@ -1129,23 +1096,7 @@ if (isset($_POST['prc3_submit'])) {
 
 
 
-<center>
-  <a href="adminlogin.php">
-    <input type="submit" name="approve" value="Logout" class="btn btn-success" id="button2" style="background-color: #4CAF50;
-  background-color:#636FCC;
-  border: none;
-  color: white;
-  margin-top: 100px;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;" />
 
-  </a>
-
-</center>
 
 
 <br />

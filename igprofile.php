@@ -1,16 +1,15 @@
 <html>
 <head>
-<link rel="stylesheet" href="igprofile2.css">
+<link rel="stylesheet" href="igprofile.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body style="background: linear-gradient(120deg,#a8c0ff, #eaafc8);">
+<body >
 <div class="dropdown" style="background: linear-gradient(120deg,#a8c0ff, #eaafc8);">
   <button class="dropbtn" style="background: linear-gradient(120deg,#a8c0ff, #eaafc8);"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVIcj4yYNjZ5iI4dAjusUE0OwK6jzd8EBON2aNJ4AejGNGYZch&usqp=CAU" style="width: 30px; height: 30px"/></button>
   <div class="dropdown-content">
     <a href="stdProfile.php">My profile</a>
     <a href="iglogin.php">Logout</a>
-    <!--<a href="proreg.php">New project registration</a>-->
-  </div>
+    </div>
 </div>
 
 <?php
@@ -37,7 +36,6 @@ $branch = $row['ig_branch'];
 $_SESSION['n'] = $name;
 $_SESSION['r'] = $roll;
 $_SESSION['b'] = $branch;
-//echo $_SESSION['branch'];
 echo "<tr>";
 echo "<td>Guide Name</td>";
 echo "<td>".$row['ig_name']."</td>";
@@ -82,9 +80,8 @@ echo "</table>";
 </HEAD>
 <BODY>
 <?php
-//echo "hii";
 	while($row1 = mysqli_fetch_array($result)) {
-		//echo"hi";
+		
 	?>
 		<div class="image"><img src="imageView3.php?image_id=<?php echo $row1["ig_id"]; ?>"  width="175" height="200"  /></div>
 	
@@ -115,7 +112,6 @@ $pwd = $_SESSION['p'];
 $query = "SELECT distinct pname, pdomain FROM employee_table WHERE int_guide='$r' AND year='3'";
 $res = mysqli_query($con,$query);
 $num = mysqli_num_rows($res);
-// echo $num;
 ?>
 <br>
 
@@ -171,9 +167,6 @@ $sq = "SELECT * FROM ig WHERE pname='$entry'";
 $ans1 = mysqli_query($con, $sq);
 $r3 = mysqli_fetch_array($ans1);
 $r4 = mysqli_num_rows($ans1); 
-/*$abs = $r3["appdisapp_abs"];
-$doc = $r3["appdisapp_doc"];
-$vid = $r3["appdisapp_vid"];*/
 if($r4!=0){
 $abs = $r3["appdisapp_abs"];
 $doc = $r3["appdisapp_doc"];

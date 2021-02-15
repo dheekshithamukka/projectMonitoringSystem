@@ -1,8 +1,3 @@
-<!-- <div class="navbar">
-<div class="image" style="margin-left: 190px"><img src="http://103.44.2.84/ecap/CollegeImages/title_head.jpg" style="margin-left: -200px; width: 1500px; height: 180px"/></div>
-</div> -->
-
-
 <?php
 $con = mysqli_connect('localhost','student','gnits','project_monitoring_copy');
 if(mysqli_connect_errno()){
@@ -12,37 +7,9 @@ session_start();
 ?>
 <html>
 <head>
-<!-- <link rel="stylesheet" href="iglogin.css"> -->
-<link rel="stylesheet" href="iglogin1.css">
+<link rel="stylesheet" href="iglogin.css">
 </head>
 <body>
-<!-- <div class="std">
-<form method="post">
-<div class="headcol">
-<center><p style="color: white"><b>INTERNAL GUIDE LOGIN</b></p></center>
-<hr></hr>
-</div>
-<center><input type="text" placeholder="Enter Id" class="log" name="roll" required ></input></center><br/>
-<center><input type ="password" placeholder="Enter password" name="pw" required></input></center>
-<center><input type="submit" name="login" value="Login" style="
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 14px 2px;
-    cursor: grab;
-    border-radius: 5px;
-    width: 95px;
-    height: 44px;
-    font-size: 14px;
-
-"/></center>
-<center><p style="color: white; font-size: 20px">Not a user?<a href="igRegistration.php">Register here</a></p></center>
-<br/>
-<br/>
-</form>
-</div> -->
 
 
 
@@ -103,8 +70,7 @@ if(isset($_POST['login'])){
 <br>
 
 
-<!-- <a href="index.php"><img class="image" src="https://i2.wp.com/www.matuloo.com/wp-content/uploads/2017/02/backbutton.png?fit=800%2C400" style="width: 70px; height: 40px; margin-top: 20px; margin-left: 630px"/>
-</a> -->
+
 
 
 <center>

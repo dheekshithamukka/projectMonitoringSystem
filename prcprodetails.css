@@ -1,124 +1,122 @@
-.table1 { 
-	color: #333;
-	font-family: Helvetica, Arial, sans-serif;
-	width: 640px;
-	border-collapse: collapse; 
-	border-spacing: 0; 
-	height: 100px;
-	margin-left: 570px;
-	margin-top: 50px;
+body {
+    background: linear-gradient(120deg, #a8c0ff, #eaafc8);
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+table { 
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 640px;
+    border-collapse: collapse; 
+    border-spacing: 0; 
+    height: 100px;
+    margin-left: 330px;
+    margin-top: 40px;
   }
   .t{
-	  height: 50px;
-	  position: fixed;
-	  margin-top: -550px;
+      height: 50px;
+      position: fixed;
+      margin-top: -550px;
+      
   }
-		  
-  .table1 td, th {  border: 0 none; height: 30px; }
-			  
-  .table1 th {
-	/* Gradient Background */
-	  /* background: linear-gradient(#333 0%,#444 100%); */
-	  color: #FFF; font-weight: bold;
-	  height: 40px;
+          
+  td, th {  border: 1 none; height: 30px; font-size: 22px; padding: 10px;}
+              
+  th {
+    
+      color: #FFF; font-weight: bold;
+      height: 40px;
+      font-size: 22px;
   }
-		  
-  .table1 td { background: #FAFAFA; text-align: center; }
+          
+  td {text-align: center; }
   
-  /* Zebra Stripe Rows */
-		  
-  /* .table1 tr:nth-child(even) td { background: #EEE; }  */
-  /* .table1 tr:nth-child(odd) td { background: #FDFDFD; } */
-  
-  /* First-child blank cells! */
-  .table1 tr td:first-child, tr th:first-child { 
-	  background: none; 
-	  font-style: italic;
-	  font-weight: bold;
-	  font-size: 14px;
-	  text-align: right;
-	  padding-right: 10px;
-	  width: 80px; 
+  tr td:first-child, tr th:first-child { 
+      background: none; 
+      font-weight: bold;
+      font-size: 20px;
+      text-align: right;
+      padding-right: 10px;
+      width: 180px; 
+      
   }
   
-  /* Add border-radius to specific cells! */
-  .table1 tr:first-child th:nth-child(2) { 
-	border-radius: 5px 0 0 0; 
+  tr:first-child th:nth-child(2) { 
+    border-radius: 5px 0 0 0; 
   } 
   
-  .table1 tr:first-child th:last-child { 
-	border-radius: 0 5px 0 0; 
+  tr:first-child th:last-child { 
+    border-radius: 0 5px 0 0; 
   }
   
+  
+  img{
+      width: 120px;
+      height: 150px;
+  }
+  .image{
+      margin-top: -270px;
+      margin-left: 870px;
+  
+  }
+  .pro{
+      margin-top: -10px;
+  }
+  
+  .main{
+      height: 250px;
+      margin-left: 20px;
+  }
+  .ig{
+    width: 615px;
+    margin-left: 80px;
+    }
+    .prc{
+    width: 615px;
+    margin-left: 80px;
+    }
+  
+  
+  .progress{
+      margin-left: 0px;
+      width: 88%;
+  }
+  
+  
+  input[type=file]{
+      font-size: 12px;
+  }
+  
+  .i{
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(120deg,#a8c0ff, #eaafc8);
+  }
 
-img{
-	width: 120px;
-	height: 150px;
+
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; 
+  }
+
+  .row {
+      margin-top: 100px;
+      margin-bottom: -150px;
+  }
+
+  .table1, td, th{
+    border: 2px solid black;
+  width: 50%;
+  margin-left: 400px;
+  margin-top: 30px;
 }
-.image{
-	margin-top: -270px;
-	margin-left: 870px;
-
-}
-.pro{
-	margin-top: -10px;
-}
-/*p{
-	margin-top: 80px;
-}*/
-.main{
-
-	height: 250px;
-}
-.s{
-}
-.container{
-	margin-top: -250px;
-	margin-left: 20px;
-}
 
 
-.progress{
-	margin-left: 150px;
-	width: 45%;
-	height: 3%;
-	margin-top: -25px;
-
-}
-
-
-
-
-.submit1{
-
-background: #0066A2;
-
-color: white;
-
-border-style: outset;
-
-border-color: #0066A2;
-
-height: 30px;
-
-width: 80px;
-
-font: bold 15px arial, sans-serif;
-
-text-shadow:none;
-
-margin-left: 150px;
-
-}
-
-.i{
-	margin-left: 2px;
-	width: 30px;
-	height: 30px;
-}
-.table{
-	
-	width: 50%;
-	margin-left: 0px;
-	margin-top: 30px;
+.col {
+  color: black;
+  text-align: center;
 }

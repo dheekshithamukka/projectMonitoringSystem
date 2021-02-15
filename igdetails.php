@@ -1,5 +1,3 @@
-<!--https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTM1vvPLvAGM5Hvo5iH3GY_FS05NmVFITPd5sl9ZFOrXMa4xjew&usqp=CAU
--->
 <a href="igprofile.php"><img class="i" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTM1vvPLvAGM5Hvo5iH3GY_FS05NmVFITPd5sl9ZFOrXMa4xjew&usqp=CAU
 " /></a>
 
@@ -17,24 +15,19 @@ session_start();
 
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="table99.css"> -->
-  <link rel="stylesheet" href="prodetails4.css">
+  <link rel="stylesheet" href="prodetails.css">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </head>
 
-<body style="background: linear-gradient(120deg, #FFAFBD, #ffc3a0)">
+<body>
 
   <?php
   $pname = $_GET['pn'];
   $guide = $_GET['guide'];
-  //echo $guide;
   $i = 1;
-  //$pname=$_SESSION['pname'];
-  //echo $_SESSION['pname'];
-  //echo $pname;
   $query = "SELECT * FROM employee_table WHERE pname='$pname'";
   $res = mysqli_query($con, $query);
   echo "<table border='3'>
@@ -340,10 +333,6 @@ $vid = $r3["appdisapp_vid"];*/
   }
 
 
-  /*echo "
-    <div style='width:100px; background-color:white; height:30px; border:1px solid #000;'>
-    <div style='width:".$percentage."px; background-color:red; height:30px;'></div>
-</div>"; */
 
   ?>
   <br>
@@ -380,11 +369,7 @@ $vid = $r3["appdisapp_vid"];*/
     <?php
     $i++;
     $troll = $row["rollNo"];
-    //   $sqm = "SELECT * FROM employee_table WHERE pname='$pname' AND int_guide='$ig' AND rollNo='$troll'";
-
-    // $ansm=mysqli_query($con,$sqm);
-    // $rsm = mysqli_fetch_array($ansm);
-
+   
     $s1 = "SELECT marks FROM prc_marks WHERE rollNo='$troll' AND prc='prc1' AND ig_id='$ig' AND pname='$pname'";
     $res1 = mysqli_query($con, $s1);
     $sum1 = 0;
@@ -397,7 +382,6 @@ $vid = $r3["appdisapp_vid"];*/
     } else {
       $a1 = $sum1 / $answer1;
     }
-    // echo $a1;
 
 
     $s2 = "SELECT marks FROM prc_marks WHERE rollNo='$troll' AND prc='prc2' AND ig_id='$ig' AND pname='$pname'";
@@ -412,7 +396,7 @@ $vid = $r3["appdisapp_vid"];*/
     } else {
       $a2 = $sum2 / $answer2;
     }
-    // echo $a2;
+    
 
 
     $s3 = "SELECT marks FROM prc_marks WHERE rollNo='$troll' AND prc='prc3' AND ig_id='$ig' AND pname='$pname'";
@@ -428,7 +412,7 @@ $vid = $r3["appdisapp_vid"];*/
       $a3 = $sum3 / $answer3;
     }
 
-    // echo $a3;
+    
 
 
 
@@ -487,9 +471,7 @@ $vid = $r3["appdisapp_vid"];*/
         echo "</table>";
         echo "<br>";
 
-        // $sum = $prc1+$prc2+$prc3;
-        // echo "<h5 style=\"margin-left: 80px;\">Total Marks: ".$sum."/30"."</h5>";
-
+        
 
       }
 
@@ -503,15 +485,12 @@ $vid = $r3["appdisapp_vid"];*/
         <div class="c" style="margin-left:80px;">
           <?php
 
-          // $sum = $rsm['marks_prc1'] + $rsm['marks_prc2'] + $rsm['marks_prc3'];
-          // echo "<h5>Total Marks: " . $sum . "/30" . "</h5>";
-
+          
 
           ?>
         </div>
         <?php
-        // }
-        // }
+      
 
         ?>
 
@@ -546,28 +525,16 @@ $vid = $r3["appdisapp_vid"];*/
           $s1 = "SELECT * FROM ig WHERE pname='$pname' AND ig_name='$ig'";
           $ans = mysqli_query($con, $s1);
           $k = mysqli_num_rows($ans);
-          // if($k==0){
+          
           $sql = "INSERT INTO ig(ig_name,pname,branch,year,section,comments,appdisapp_abs,appdisapp_doc,appdisapp_vid) VALUES('$ig','$pname','$b','$y','$sec','$comments','0','0','0')";
           if (mysqli_query($con, $sql)) {
             echo ("<script LANGUAGE='JavaScript'>
    window.alert('Commented successfully. ');
   </script>");
-            // header("Location:igdetails.php?pn=$pname");
           } else {
             echo "Try again";
           }
-          // }
-          // else{
-          // 	$s = "UPDATE ig SET comments='$comments' WHERE pname='$pname' AND ig_name='$ig'";
-          // 	if(mysqli_query($con,$s)){
-          // 		echo ("<script LANGUAGE='JavaScript'>
-          //    window.alert('Commented successfully.');
-          //   </script>");
-          // 	}
-          // 	else{
-          // 		echo "Try again";
-          // 	}	
-          // }
+          
         }
         ?>
 

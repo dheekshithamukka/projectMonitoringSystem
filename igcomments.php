@@ -26,7 +26,6 @@ echo $b;
 
 $comments=$_POST['comments'];
 if(isset($_POST['submit_comments'])){
-//echo "Hi";
 	$s1 = "SELECT * FROM ig WHERE pname='$pname' AND ig_name='$ig'";
 	$ans = mysqli_query($con,$s1);
 	$k = mysqli_num_rows($ans);

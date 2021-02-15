@@ -13,14 +13,11 @@ if(mysqli_connect_errno()){
 session_start();
 ?>
 <?php
-//echo "Hi";
 $pname = $_GET['pn1'];
-//echo $pname;
 $ig = $_SESSION['ig'];
-//echo $ig;
 if(isset($_POST['submit']))
 {    
-//echo "Hi";
+
 
  $file = rand(1000,100000)."-".$_FILES['file']['name'];
  $extension = pathinfo($file, PATHINFO_EXTENSION);
@@ -28,19 +25,19 @@ if(isset($_POST['submit']))
  $file_size = $_FILES['file']['size'];
  $file_type = $_FILES['file']['type'];
  $folder="uploads/";
- //echo "Hi";
+
  $d=NULL;
  $v=NULL;
- //echo "HI";
+ 
  if (!in_array($extension, ['zip', 'pdf', 'docx'])) {
-        //echo "Your file extension must be .zip, .pdf or .docx";
+        
     echo ("<script LANGUAGE='JavaScript'>
          window.alert('Your file extension must be .zip, .pdf or .docx');
         window.location.href = 'prodetails.php?pn=$pname';
         </script>");
     } 
     elseif ($_FILES['file']['size'] > 1000000) { // file shouldn't be larger than 1Megabyte
-        //echo "File too large!";
+        
     echo ("<script LANGUAGE='JavaScript'>
          window.alert('File too large!');
         window.location.href = 'prodetails.php?pn=$pname';
@@ -54,7 +51,7 @@ if(isset($_POST['submit']))
             if($num==0){
  				$sql="INSERT INTO file_upload_1(pname,int_guide,file1_abstract,type1,size1,file2_documents,type2,size2,file3_videos,type3,size3) VALUES('$pname','$ig','$file','$file_type','$file_size','$d',0,0,'$v',0,0)";
  				if(mysqli_query($conn,$sql)){
- 				//echo "File uploaded successfully.";
+ 				
                     echo ("<script LANGUAGE='JavaScript'>
          window.alert('File uploaded successfully');
         window.location.href = 'prodetails.php?pn=$pname';
@@ -65,20 +62,20 @@ if(isset($_POST['submit']))
          window.alert('File not uploaded. Try again.');
         window.location.href = 'prodetails.php?pn=$pname';
         </script>");
- 	//echo "File not uploaded. Try again.";
+ 	
  }
 }
 else{
 	$s1="UPDATE file_upload_1 SET file1_abstract='$file',type1='$file_type',size1='$file_size' WHERE pname='$pname'";
     if(mysqli_query($conn,$s1)){
-                    //echo "File updated successfully";
+                    
         echo ("<script LANGUAGE='JavaScript'>
          window.alert('File updated successfully');
         window.location.href = 'prodetails.php?pn=$pname';
         </script>");
                 }
                 else{
-                    //echo "Not updated. Try again";
+                    
                     echo ("<script LANGUAGE='JavaScript'>
          window.alert('Not updated. Try again.');
         window.location.href = 'prodetails.php?pn=$pname';
@@ -87,7 +84,7 @@ else{
 }
 }
 else{
-	//echo "Try again";
+	
     echo ("<script LANGUAGE='JavaScript'>
          window.alert('Try again.');
         window.location.href = 'prodetails.php?pn=$pname';

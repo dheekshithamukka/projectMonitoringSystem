@@ -1,12 +1,9 @@
 <?php
 $con=mysqli_connect('localhost','student','gnits','project_monitoring_copy');
 $pname=$_GET['p'];
-//echo $pname;
 $int_guide=$_GET['i'];
-//echo $int_guide;
 if(isset($_POST['approve1']))
 {
-	//echo"abstract";
 	$s = "SELECT * FROM ig WHERE pname='$pname' AND ig_name='$int_guide'";
 	$rs = mysqli_query($con,$s);
 	$rsm = mysqli_fetch_array($rsm);
@@ -18,7 +15,6 @@ if(isset($_POST['approve1']))
 		 window.alert('Abstract approved');
 		window.location.href = 'igdetails.php?pn=$pname';
 		</script>");
-		//echo"Abstract approved.";
 		}
 
 	}
@@ -30,13 +26,11 @@ if(isset($_POST['approve1']))
 		 window.alert('Abstract approved');
 		window.location.href = 'igdetails.php?pn=$pname';
 		</script>");
-		//echo"Abstract approved.";
 	}
 }
 }
 if(isset($_POST['approve2']))
 {
-	//echo"document";
 	$s = "SELECT * FROM ig WHERE pname='$pname' AND ig_name='$int_guide'";
 	$rs = mysqli_query($con,$s);
 	$rsm = mysqli_fetch_array($rsm);
@@ -48,7 +42,6 @@ if(isset($_POST['approve2']))
 		 window.alert('Abstract approved');
 		window.location.href = 'igdetails.php?pn=$pname';
 		</script>");
-		//echo"Abstract approved.";
 		}
 
 	}else{
@@ -59,12 +52,10 @@ if(isset($_POST['approve2']))
 		 window.alert('Documents approved');
 		window.location.href = 'igdetails.php?pn=$pname';
 		</script>");
-	//echo "Documents approved.";
 }
 }
 if(isset($_POST['approve3']))
 {
-		//echo"videos";
 	$s = "SELECT * FROM ig WHERE pname='$pname' AND ig_name='$int_guide'";
 	$rs = mysqli_query($con,$s);
 	$rsm = mysqli_fetch_array($rsm);
@@ -76,7 +67,6 @@ if(isset($_POST['approve3']))
 		 window.alert('Abstract approved');
 		window.location.href = 'igdetails.php?pn=$pname';
 		</script>");
-		//echo"Abstract approved.";
 		}
 
 	}
@@ -89,7 +79,4 @@ echo ("<script LANGUAGE='JavaScript'>
 		</script>");
 }
 }
-
-//header("Location:igdetails.php?pn=$pname");
-//echo"Project Approved";
 ?>

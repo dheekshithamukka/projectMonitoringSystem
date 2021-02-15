@@ -65,9 +65,7 @@ session_start();
                     <option value="C">C</option>
                 </select>
                 <br><br>
-                <!-- <label>Enter PRC Id: </label>
-                <input placeholder="PRC Id" type="text" id="prcId" name="prcId">
-                <br /> -->
+                
 
                 <p>
                     <label><strong>No of PRC</strong></label>
@@ -93,8 +91,7 @@ session_start();
                     </tr>
                 </table>
             </div>
-            <!-- <input type="submit" name="prcAllotment" value="Submit" /> -->
-
+            
         </div>
     </div>
 

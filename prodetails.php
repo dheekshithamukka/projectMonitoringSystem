@@ -10,16 +10,15 @@ if (mysqli_connect_errno()) {
 session_start();
 ?>
 <html>
-
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="prodetails2.css">
+  <link rel="stylesheet" href="prodetails.css">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
-<body style="background: linear-gradient(120deg, #FFAFBD, #ffc3a0)">
+<body >
   <?php
   $pname = $_GET['pn'];
   $roll = $_GET['roll'];
@@ -32,15 +31,7 @@ session_start();
 ";
 
   echo "<td>TEAM MEMBERS</td>";
-  // while($row = mysqli_fetch_array($res)){
-  //   echo "<tr>";
-  //       echo "<td></td>";
-  // 	    $tname = $row["name"];
-  // 	    $troll = $row["rollNo"];
-  // 	    echo "<td>".$i.". ". $tname." - ". $troll."</td>";
-  //       $i++; 
-  //       echo "</tr>";
-  // 	}
+  
 
 
   echo "<td>";
@@ -74,9 +65,7 @@ session_start();
   echo "</tr>";
 
   $ig = $rs['int_guide'];
-  //echo $ig;
   $_SESSION['ig'] = $ig;
-  //echo $_SESSION['ig'];
 
   $branch = $rs['branch'];
   $year = $rs['year'];
@@ -94,12 +83,7 @@ session_start();
 
   <div class="container">
     <div class="row">
-      <!--<form action="filesLogic.php?pn1=<?php //echo $pname 
-                                            ?>" method="post" enctype="multipart/form-data" >
-          <h3>Upload Abstract</h3>
-          <input type="file" name="myfile"> <br>
-          <button type="submit" name="submit">upload</button>
-        </form>-->
+     
 
 
 
@@ -109,7 +93,7 @@ session_start();
       $r1 = mysqli_query($con, $s);
       $rs1 = mysqli_fetch_array($r1);
       $deadline = $rs1['date'];
-      // echo $deadline;
+      
       if (date("Y-m-d") <= $deadline) {
       ?>
         <div class="column">
@@ -184,21 +168,7 @@ session_start();
             </div>
 
 
-            <!--<form action="filesLogic1.php?pn2=<?php //echo $pname 
-                                                  ?>" method="post" enctype="multipart/form-data" >
-          <h3>Upload Documents</h3>
-          <input type="file" name="myfile"> <br>
-          <button type="submit" name="save1">upload</button>
-        </form>-->
-
-
-
-            <!--<form method="post" action="filesLogic2.php?pn3=<?php //echo $pname 
-                                                                ?>" enctype='multipart/form-data'>
-  <h3>Upload Videos</h3>
-      <input type='file' name='file' /><br>
-      <input type='submit' value='Upload' name='but_upload'>
-    </form> -->
+           
 
     </div>
   </div>
@@ -245,7 +215,6 @@ session_start();
 
 
 
-  <!--<b style="margin-left: 20px;">Progress: </b>-->
 
   <b>
     <h5 style="margin-left: 80px;">Progress:</h5>
@@ -319,12 +288,7 @@ session_start();
       <h3 style="margin-left: 80px;">Marks: </h3>
       <?php
 
-      // $anotherApp = "SELECT marks_prc1, marks_prc2, marks_prc3 FROM employee_table WHERE pname='$pname' AND rollNo='$roll'";
-      // $ans1 = mysqli_query($con, $anotherApp);
-      // $rsm = mysqli_fetch_array($ans1);
-      // $prc1 = $rsm['marks_prc1'];
-      // $prc2 = $rsm['marks_prc2'];
-      // $prc3 = $rsm['marks_prc3'];
+      
 
 
       $s1 = "SELECT marks FROM prc_marks WHERE rollNo='$roll' AND prc='prc1' AND ig_id='$ig' AND pname='$pname'";
@@ -335,7 +299,7 @@ session_start();
         $sum1 = $sum1 + $answe1['marks'];
       }
       $a1 = $sum1 / $answer1;
-      // echo $a1;
+    
 
 
       $s2 = "SELECT marks FROM prc_marks WHERE rollNo='$roll' AND prc='prc2' AND ig_id='$ig' AND pname='$pname'";
@@ -346,7 +310,7 @@ session_start();
         $sum2 = $sum2 + $answe2['marks'];
       }
       $a2 = $sum2 / $answer2;
-      // echo $a2;
+
 
 
       $s3 = "SELECT marks FROM prc_marks WHERE rollNo='$roll' AND prc='prc3' AND ig_id='$ig' AND pname='$pname'";
@@ -357,7 +321,7 @@ session_start();
         $sum3 = $sum3 + $answe1['marks'];
       }
       $a3 = $sum3 / $answer3;
-      // echo $a3;
+   
 
 
       ?>
@@ -365,7 +329,6 @@ session_start();
       <table class="table1" style="margin-left: 84px;">
         <thead>
           <tr>
-            <!-- <th scope="col"></th> -->
             <th scope="col" style="color: black;
   text-align: center;">PRC1</th>
             <th scope="col" style="color: black;
@@ -377,7 +340,6 @@ session_start();
         </thead>
         <tbody>
           <tr>
-            <!-- <th scope="row"></th>  -->
         <?php
 
 
@@ -416,9 +378,7 @@ session_start();
         echo "</table>";
         echo "<br>";
 
-        // $sum = $prc1+$prc2+$prc3;
-        // echo "<h5 style=\"margin-left: 80px;\">Total Marks: ".$sum."/30"."</h5>";
-
+       
 
       }
     }

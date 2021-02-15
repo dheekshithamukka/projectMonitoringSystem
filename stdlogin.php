@@ -1,7 +1,3 @@
-<!-- <div class="navbar">
-<div class="image" style="margin-left: 190px"><img src="http://103.44.2.84/ecap/CollegeImages/title_head.jpg" style="margin-left: -200px; width: 1500px; height: 180px"/></div>
-</div> -->
-
 <?php
 $con = mysqli_connect('localhost','student','gnits','project_monitoring_copy');
 if(mysqli_connect_errno()){
@@ -13,38 +9,9 @@ session_start();
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" type="text/css" href="stdlogin2.css"> -->
-<link rel="stylesheet" type="text/css" href="stdlogin3.css">
+<link rel="stylesheet" type="text/css" href="stdAdminLogin.css">
 </head>
 <body>
-<!-- <div class="row">
-<div class="std">
-<form method="post">
-<div class="headcol">
-<center><p style="color: white"><b>STUDENT LOGIN</b></p></center>
-<hr></hr>
-</div>
-<center><input type="text" placeholder="Enter Student Id" class="log" name="roll" required ></input></center><br/>
-<center><input type ="password" placeholder="Enter password" name="pw" required></input></center>
-<center><input type="submit" name="login" value="Login" style="
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 14px 2px;
-    cursor: grab;
-    border-radius: 5px;
-    width: 95px;
-    height: 44px;
-    font-size: 14px;
-
-"></center>
-<center><p style="color: white; font-size: 20px">Not a user? <a href="stdRegister1.php" style="color: black">Register here</a></p></center>
-<br/>
-<br/>
-</form>
-</div> -->
 
 
 <div class="center">

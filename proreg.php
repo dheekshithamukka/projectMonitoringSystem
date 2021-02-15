@@ -2,7 +2,7 @@
   <script src='jquery-3.2.1.min.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
-  <link rel="stylesheet" type="text/css" href="proreg2.css" />
+  <link rel="stylesheet" type="text/css" href="proreg.css" />
 </head>
 
 <body>
@@ -76,9 +76,7 @@
     <center><input type="text" placeholder="Enter internal guide Id" name="int_guide" required /></center>
   </div><br>
 
-  <!--<div>
-                <center><input type="text" placeholder="Type of project" name="ptype" required/></center>
-            </div>-->
+  
   <div>
     Type of project: <select name="ptype">
       <option>Select</option>
@@ -86,29 +84,20 @@
       <option value="major">Major project</option>
     </select>
   </div><br>
-  <!-- <div>
-    <p>Description:</p><textarea name="description" rows="5" cols="50"></textarea>
-  </div><br>
-  <div>
-    <p>Problem statement:</p><textarea name="ps" rows="5" cols="50"></textarea>
-  </div><br>
-
-  <div>
-    <p>Solution:</p><textarea name="sol" rows="5" cols="50"></textarea>
-  </div><br> -->
+  
   <div>
     <center><input type="password" placeholder="Enter password" name="pw" required /></center>
   </div>
   <div>
     <input type="submit" name="submit_row" value="Register" />
-    <a href="index.php"><input type="submit1" value="Cancel" /></a>
+    <a href="stdprofile.php"><input type="submit1" value="Cancel" /></a>
   </div>
 </div>
 
 <?php
 if (isset($_POST['submit_row'])) {
   $connect = mysqli_connect('localhost', 'student', 'gnits', 'project_monitoring_copy');
-  // $db=mysql_select_db($connect, $databasename);  
+  
   if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
   }
@@ -134,14 +123,10 @@ if (isset($_POST['submit_row'])) {
   $section1 = $_SESSION['s'];
 
 
-
-  //echo $pname;
   $s = "SELECT * FROM employee_table WHERE pname='$pname'";
   $rs = mysqli_query($connect, $s);
   $r = mysqli_num_rows($rs);
-  //echo $r;
-
-  // $s1 = "SELECT stdRollNo FROM stdreg WHERE "
+  
 
 
 
@@ -149,7 +134,7 @@ if (isset($_POST['submit_row'])) {
 
 
   if (mysqli_num_rows($rs) > 0) {
-    //echo "Hello";
+  
     echo ("<script LANGUAGE='JavaScript'>
          window.alert('Project name already exists. Please try again.');
         window.location.href = 'proreg.php';
@@ -171,7 +156,6 @@ if (isset($_POST['submit_row'])) {
             if ($year1 == $year[$i] && $section1 == $section[$i] && $branch1 == $job[$i]) {
               $q1 = "SELECT * FROM employee_table WHERE rollNo='$age[$i]' AND ptype='$ptype'";
               $res1 = mysqli_query($connect, $q1);
-              // $rsm1 = mysqli_fetch_array($res1);
               $num1 = mysqli_num_rows($res1);
 
               $q2 = "SELECT * FROM employee_table WHERE rollNo='$roll1' AND ptype='$ptype' ";
@@ -187,9 +171,9 @@ if (isset($_POST['submit_row'])) {
               </script>");
                 } else {
                   if ($name[$i] != "" && $age[$i] != "" && $job[$i] != "" && $year[$i] != "" && $section[$i] != "" && $pname != "" && $pdomain != "" && $pw != "" ) {
-                    $query = "INSERT INTO employee_table(name,rollNo,branch,year,section,pname,pdomain,int_guide,intName,ptype,password,appDisapp,average_marks) VALUES('$name1','$roll1','$branch1','$year1','$section1','$pname','$pdomain','$int_guide','$int_name','$ptype','$pw',0,0)";
+                    $query = "INSERT INTO employee_table(name,rollNo,branch,year,section,pname,pdomain,int_guide,intName,ptype,password,appDisapp,prc1,prc2,prc3,average_marks) VALUES('$name1','$roll1','$branch1','$year1','$section1','$pname','$pdomain','$int_guide','$int_name','$ptype','$pw',0,0,0,0,0)";
                     mysqli_query($connect, $query);
-                    $q = "INSERT INTO employee_table(name, rollNo, branch,year,section, pname, pdomain,int_guide, intName, ptype, password,appDisapp,average_marks) VALUES('$name[$i]', '$age[$i]', '$job[$i]','$year[$i]','$section[$i]', '$pname','$pdomain','$int_guide','$int_name', '$ptype', '$pw',0,0)";
+                    $q = "INSERT INTO employee_table(name, rollNo, branch,year,section, pname, pdomain,int_guide, intName, ptype, password,appDisapp,prc1,prc2,prc3,average_marks) VALUES('$name[$i]', '$age[$i]', '$job[$i]','$year[$i]','$section[$i]', '$pname','$pdomain','$int_guide','$int_name', '$ptype', '$pw',0,0,0,0,0)";
                     mysqli_query($connect, $q);
                     echo ("<script LANGUAGE='JavaScript'>
               window.alert('Successfully created. ');

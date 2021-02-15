@@ -27,40 +27,21 @@ echo "Hi";
 		$m1=$r1['marks_prc1'];
 		$m2=$r1['marks_prc2'];
 		$m3=$r1['marks_prc3'];
-		//$s = "UPDATE prc_comments SET comments='$comments' WHERE pname='$pname' AND ig_guide='$ig'";
-		/*if(mysqli_query($con,$s)){
-		//echo "Commented successfully";
-		//header('location:prcprodetails.php');
-		echo ("<script LANGUAGE='JavaScript'>
-         window.alert('Comments updated successfully.');
-        window.location.href = 'prcprodetails.php?pn=$pname';
-        </script>");
-	}
-	else{
-		//echo "Try again";
-		echo ("<script LANGUAGE='JavaScript'>
-         window.alert('Try again.');
-        window.location.href = 'prcprodetails.php?pn=$pname';
-        </script>");
-	}*/
+
 	}
 	else{
 		$m1=0;
 		$m2=0;
 		$m3=0;
 	}
-    //echo "Hi";
 	$sql = "INSERT INTO prc_comments(pname,ig_guide,prcId,comments,marks_prc1,marks_prc2,marks_prc3) VALUES('$pname','$ig','$prcId','$comments','$m1','$m2','$m3')";
 	if(mysqli_query($con,$sql)){
-		//echo "Commented successfully";
-		//header('location:prcprodetails.php');
 		echo ("<script LANGUAGE='JavaScript'>
          window.alert('Commented successfully.');
         window.location.href = 'prcprodetails.php?pn=$pname&prcId=$prcId';
         </script>");
 	}
 	else{
-		//echo "Try again";
 		echo ("<script LANGUAGE='JavaScript'>
          window.alert('Try again.');
         window.location.href = 'prcprodetails.php?pn=$pname&prcId=$prcId';
@@ -72,6 +53,5 @@ else{
          window.alert('Try again.');
         window.location.href = 'prcprodetails.php?pn=$pname&prcId=$prcId';
         </script>");
-	//echo "Try again";
 }
 ?>

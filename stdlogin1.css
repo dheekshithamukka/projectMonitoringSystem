@@ -1,6 +1,5 @@
 .headcol{
 border-radius: 8%;
-/* // background: #d26ea1; */
 margin-top: -16px;
 }
 .headcol p{
@@ -36,7 +35,6 @@ button{
 input {
     font-family: "Helvetica Neue", Helvetica, sans-serif;
     font-size: 12px;
-    /*outline: none;*/
 }
 input[type=text],
 input[type=email],

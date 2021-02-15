@@ -1,17 +1,16 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="tableprcpro2.css">
+  <link rel="stylesheet" href="prcProfile.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
-<body style="background: linear-gradient(120deg,#a8c0ff, #eaafc8);">
+<body>
   <div class="dropdown" style="background: linear-gradient(120deg,#a8c0ff, #eaafc8);">
     <button class="dropbtn" style="background: linear-gradient(120deg,#a8c0ff, #eaafc8);"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVIcj4yYNjZ5iI4dAjusUE0OwK6jzd8EBON2aNJ4AejGNGYZch&usqp=CAU" style="width: 30px; height: 30px" /></button>
     <div class="dropdown-content">
       <a href="stdProfile.php">My profile</a>
       <a href="prclogin.php">Logout</a>
-      <!--<a href="proreg.php">New project registration</a>-->
     </div>
   </div>
 
@@ -107,8 +106,7 @@
     $q = "select branch, year, section from prc_allotment where prcId='$r'";
     $q_res = mysqli_query($con, $q);
     $row = mysqli_fetch_array($q_res);
-    // echo $row["year"];
-    // echo $row["section"];
+  
     $b = $row["branch"];
     $y = $row["year"];
     $sec = $row["section"];
@@ -175,9 +173,7 @@
                 $ans1 = mysqli_query($con, $sq);
                 $r3 = mysqli_fetch_array($ans1);
                 $r4 = mysqli_num_rows($ans1);
-                /*$abs = $r3["appdisapp_abs"];
-$doc = $r3["appdisapp_doc"];
-$vid = $r3["appdisapp_vid"];*/
+               
                 if ($r4 != 0) {
                   $abs = $r3["appdisapp_abs"];
                   $doc = $r3["appdisapp_doc"];
@@ -322,24 +318,9 @@ $vid = $r3["appdisapp_vid"];*/
   margin-right: -230px;
   cursor: pointer;" />
 
-          <!-- <button class="btn"><i class="fa fa-download"></i> Download</button> -->
-
+         
         </form>
 
-        <!-- <form method="post" action="approve.php?pn=$pname" align="center">
-          <input type="submit" name="approve" value="Approve" class="btn btn-success" id="button2" style="background-color: #4CAF50;
-  background-color:#8B008B;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;" />
-
-
-        </form> -->
         <br />
         <br />
 

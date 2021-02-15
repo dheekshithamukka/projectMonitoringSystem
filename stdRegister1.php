@@ -11,11 +11,8 @@ if(mysqli_connect_errno()){
 session_start();
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> 
-<html lang="en"> <!--<![endif]-->
+
+<html lang="en"> 
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta charset="utf-8">
@@ -23,7 +20,7 @@ session_start();
 <link rel="stylesheet" type="text/css" href="stdregister1.css" />
 </head>
 <body>
-<!--<div class=bimage>-->
+
 <center>
 <div class="container">
     <section id="content">
@@ -46,9 +43,11 @@ session_start();
                 <input type="text" placeholder="Enter branch" required name="branch" />
             </div>
             <div>
-                <input type="number" placeholder="Enter year" required name="year" />
+                <br />
+                <input style="width: 298px; height:35px; margin-left: 5px;" type="number" min="3" max="4" placeholder="Enter year" required name="year" />
             </div>
             <div>
+                <br />
                 <input type="text" placeholder="Enter section" required name="section" />
             </div>
 
@@ -56,13 +55,10 @@ session_start();
                 <input type="password" placeholder="password" required name="password"/>
             </div>
            <div>
-                <!--<button onclick="registrationForm()">Register</button>
-		<a href="index.php"><input type="submit1" value="Cancel"/></a>-->
-        <!--<input type="submit" name="submit" value="Register"></input>-->
+                
             </div>
 <div>
 <br></br>
-		<!--<a href="image_upload.php">Upload your image here</a>-->
         <input name="userImage" type="file" class="inputFile" required style="margin-left: -65px;"/><br><br>
         <input type="submit" value="Register" name="submit" style="
     background-color: #4CAF50;
@@ -89,45 +85,10 @@ session_start();
 
 
         </form>
-<!-- form -->
-<!--<div class="formProcessing"></div>
-<div class="formResult"></div>
-<script>
-function registrationForm(){
-var name = $('#name').val();
-var roll = $('roll').val();
-var phone = $('#phone').val();
-var email = $('#email').val();
-var password = $('#password').val();
-var branch = $('#branch').val();
-if(name != "" &&  roll != "" && phone != "" && email != "" && password != "" && branch != ""){
-$.ajax({
-type: "POST",
-url: "stdregprocess.php",
-data: "name="+name+"&roll="+roll+"&phone="+phone+"&email="+email+"&password="+password+"&branch="+branch ,
-cache: false,
-beforeSend: function(){
-$('.formProcessing').fadeIn('fast').html("Processing your request");
-},
-success: function(html){
-$('.formProcessing').fadeOut('fast');
-$('.formResult').fadeIn('fast').html(html);
-},
-});
-}
-else{
-$('.formResult').fadeIn('fast').html("Please fill all the details correctly");
-}
-}
-</script> -->
-
-
-
 
 
 <?php     
 if(isset($_POST['submit'])){
-    //echo "Hi";
 $name=$_POST['name'];
 $roll=$_POST['roll'];
 $email=$_POST['email'];
@@ -136,7 +97,6 @@ $branch=$_POST['branch'];
 $year = $_POST['year'];
 $section = $_POST['section'];
 $password=$_POST['password'];
-//$userImage=$_POST['userImage'];
 if($name==''){
     echo 'Name empty';
 }
@@ -161,9 +121,7 @@ else if($section==''){
 else if($password==''){
     echo 'Password empty';
 }
-/*else if($userImage==''){
-    echo 'Image empty';
-}*/
+
 else if($name=='' || $roll=='' || $email=='' || $phone=='' || $branch=='' || $year=='' || $section=='' || $password=='')
 {
 echo "Please fill the empty field.";

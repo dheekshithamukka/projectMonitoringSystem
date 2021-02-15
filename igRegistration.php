@@ -11,19 +11,15 @@ if(mysqli_connect_errno()){
 session_start();
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> 
-<html lang="en"> <!--<![endif]-->
+<html lang="en"> 
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta charset="utf-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="stdregister1.css" />
+<link rel="stylesheet" type="text/css" href="igRegistration.css" />
 </head>
 <body>
-<!--<div class=bimage>-->
+
 <center>
 <div class="container">
     <section id="content">
@@ -50,13 +46,10 @@ session_start();
                 <input type="password" placeholder="password" required name="password"/>
             </div>
            <div>
-                <!--<button onclick="registrationForm()">Register</button>
-		<a href="index.php"><input type="submit1" value="Cancel"/></a>-->
-        <!--<input type="submit" name="submit" value="Register"></input>-->
+                
             </div>
 <div>
 <br></br>
-		<!--<a href="image_upload.php">Upload your image here</a>-->
         <input name="userImage" type="file" class="inputFile" required/>
         <input type="submit" value="Submit" name="submit"/>
             </div>
@@ -68,40 +61,6 @@ session_start();
 		</div>
 
         </form>
-<!-- form -->
-<!--<div class="formProcessing"></div>
-<div class="formResult"></div>
-<script>
-function registrationForm(){
-var name = $('#name').val();
-var roll = $('roll').val();
-var phone = $('#phone').val();
-var email = $('#email').val();
-var password = $('#password').val();
-var branch = $('#branch').val();
-if(name != "" &&  roll != "" && phone != "" && email != "" && password != "" && branch != ""){
-$.ajax({
-type: "POST",
-url: "stdregprocess.php",
-data: "name="+name+"&roll="+roll+"&phone="+phone+"&email="+email+"&password="+password+"&branch="+branch ,
-cache: false,
-beforeSend: function(){
-$('.formProcessing').fadeIn('fast').html("Processing your request");
-},
-success: function(html){
-$('.formProcessing').fadeOut('fast');
-$('.formResult').fadeIn('fast').html(html);
-},
-});
-}
-else{
-$('.formResult').fadeIn('fast').html("Please fill all the details correctly");
-}
-}
-</script> -->
-
-
-
 
 
 <?php     
@@ -113,7 +72,6 @@ $email=$_POST['email'];
 $phone=$_POST['phone'];
 $branch=$_POST['branch'];
 $password=$_POST['password'];
-//$userImage=$_POST['userImage'];
 if($name==''){
     echo 'Name empty';
 }
@@ -132,9 +90,6 @@ else if($branch==''){
 else if($password==''){
     echo 'Password empty';
 }
-/*else if($userImage==''){
-    echo 'Image empty';
-}*/
 else if($name=='' || $roll=='' || $email=='' || $phone=='' || $branch=='' || $password=='')
 {
 echo "Please fill the empty field.";

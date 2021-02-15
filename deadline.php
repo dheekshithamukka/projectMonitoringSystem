@@ -25,15 +25,12 @@ if(isset($_POST['submit_marks_1'])){
 	$avg = (float)($marks1 + $row['marks_prc2'] + $row['marks_prc3'])/3;
 	$sql = "UPDATE employee_table SET marks_prc1='$marks1', average_marks='$avg' WHERE pname='$pname' AND int_guide='$ig' AND rollNo='$roll'";
 	if(mysqli_query($con,$sql)){
-		//echo "Updated successfully";
-		//header('location:prcprodetails.php');
 		echo ("<script LANGUAGE='JavaScript'>
          window.alert('Marks updated successfully.');
         window.location.href = 'prcprodetails.php?pn=$pname';
         </script>");
 	}
 	else{
-		//echo "Try again";
 		echo ("<script LANGUAGE='JavaScript'>
          window.alert('Try again.');
         window.location.href = 'prcprodetails.php?pn=$pname';
@@ -44,15 +41,12 @@ else{
 	$marks1=$_POST['marks1'];
 	$sql = "INSERT INTO prc_comments(pname,ig_guide,comments,marks_prc1,marks_prc2,marks_prc3) VALUES('$pname','$ig','','$marks1','0','0')";
 	if(mysqli_query($con,$sql)){
-		//echo "Marks uploaded successfully";
-		//header('location:prcprodetails.php');
 		echo ("<script LANGUAGE='JavaScript'>
          window.alert('Marks uploaded successfully.');
         window.location.href = 'prcprodetails.php?pn=$pname';
         </script>");
 	}
 	else{
-		//echo "Try again";
 		echo ("<script LANGUAGE='JavaScript'>
          window.alert('Try again.');
         window.location.href = 'prcprodetails.php?pn=$pname';
@@ -66,15 +60,12 @@ if(isset($_POST['submit_marks_2'])){
 	$avg = (float)($marks2 + $row['marks_prc1'] + $row['marks_prc3'])/3;
 	$sql = "UPDATE employee_table SET marks_prc2='$marks2', average_marks='$avg' WHERE pname='$pname' AND int_guide='$ig' AND rollNo='$roll'";
 	if(mysqli_query($con,$sql)){
-		//echo "Updated successfully";
-		//header('location:prcprodetails.php');
 		echo ("<script LANGUAGE='JavaScript'>
          window.alert('Marks uploaded successfully.');
         window.location.href = 'prcprodetails.php?pn=$pname';
         </script>");
 	}
 	else{
-		//echo "Try again";
 		echo ("<script LANGUAGE='JavaScript'>
          window.alert('Try again.');
         window.location.href = 'prcprodetails.php?pn=$pname';
@@ -93,8 +84,6 @@ if(isset($_POST['submit_marks_3'])){
          window.alert('Marks uploaded successfully.');
         window.location.href = 'prcprodetails.php?pn=$pname';
         </script>");
-		//echo "Updated successfully";
-		//header('location:prcprodetails.php');
 	}
 	else{
 		//echo "Try again";

@@ -1,10 +1,13 @@
 body {
     background: linear-gradient(120deg,#a8c0ff, #eaafc8);
-
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 table { 
   margin-top: 100px;
-  margin-left: 1220px;
+  margin-left: 220px;
   color: #333;
   font-family: Helvetica, Arial, sans-serif;
   width: 640px;
@@ -14,23 +17,15 @@ table {
 
 }
     
-td, th {  border: 0 none; height: 30px; }
+td, th {  border: 1 none; height: 30px; }
       
 th {
-  /* Gradient Background */
-  background: linear-gradient(#333 0%,#444 100%);
   color: #FFF; font-weight: bold;
   height: 40px;
 }
     
-td { background: #FAFAFA; text-align: center;}
+td { text-align: center; }
 
-/* Zebra Stripe Rows */
-    
-tr:nth-child(even) td { background: #EEE; } 
-tr:nth-child(odd) td { background: #FDFDFD; }
-
-/* First-child blank cells! */
 tr td:first-child, tr th:first-child { 
   background: none; 
   font-style: italic;
@@ -38,10 +33,9 @@ tr td:first-child, tr th:first-child {
   font-size: 14px;
   text-align: right;
   padding-right: 10px;
-  width: 80px; 
+  width: 180px; 
 }
 
-/* Add border-radius to specific cells! */
 tr:first-child th:nth-child(2) { 
   border-radius: 5px 0 0 0; 
 } 
@@ -56,7 +50,7 @@ img{
   height: 150px;
 }
 .image{
-  margin-top: -250px;
+  margin-top: -255px;
   margin-left: 870px;
 
 }
@@ -73,20 +67,16 @@ p{
 
 
 .dropbtn {
-  /*background-color: #4CAF50;*/
   background-color: white;
-  /*color: white;*/
   padding: 20px;
   font-size: 16px;
   border: none;
-  position: fixed;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
-  /*float: right;*/
-  margin-left: 1110px;
+  float: right;
   margin-top: -10px;
 }
 
@@ -98,7 +88,6 @@ p{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   font-size: 20px;
-  margin-top: 80px;
   font-size: 14px;
 }
 
@@ -113,8 +102,6 @@ p{
 
 .dropdown:hover .dropdown-content {display: block;}
 
-/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
-
 .dropdown:hover .dropbtn {background-color: white;
 }
 
@@ -125,10 +112,8 @@ p{
   padding: 0 10px;
 }
 
-/* Remove extra left and right margins, due to padding */
 .row {margin: 0 -5px;}
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
@@ -140,4 +125,11 @@ p{
   padding: 16px;
   text-align: center;
   background-color: #f1f1f1;
+}
+
+
+.progress{
+	width: 870%;
+	height: 3%;
+	margin-top: -25px;
 }

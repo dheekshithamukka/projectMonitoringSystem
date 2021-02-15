@@ -11,13 +11,15 @@ session_start();
 ?>
 <?php
 
+$prcId = $_GET['prcId'];
 
 if (isset($_POST['approve'])) { // if save button on the form is clicked
 	$pname = $_GET['pn'];
-	// $sql = "SELECT * FROM employee_table WHERE pname='$pname'";
-    $s = "UPDATE employee_table SET appDisapp=1 WHERE pname='$pname'";
-    $ans = mysqli_query($conn,$s);
-	if(mysqli_query($conn,$s)){
+	$s = "UPDATE employee_table SET appDisapp=1 WHERE pname='$pname'";
+	$s1 = "UPDATE prcreg SET approve=1 WHERE prcRollNo='$prcId'";
+	$ans = mysqli_query($conn,$s);
+	$ans1 = mysqli_query($conn,$s1);
+	if(mysqli_query($conn,$s) && mysqli_query($conn,$s1)){
 		echo ("<script LANGUAGE='JavaScript'>
 		 window.alert('Approved successfully');
 		window.location.href = 'prcprofile.php';
